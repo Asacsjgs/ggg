@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100%;
+    height: 100dvh;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #070a0e;
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.font-mono-tactical {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.hud-stroke {
+  paint-order: stroke fill;
+  -webkit-text-stroke: 3px rgba(7, 10, 14, 0.9);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.stage-16-9 {
+  container-type: size;
+}
+
+.hud-scale-layer {
+  padding: max(8px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right))
+    max(10px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+}
+
+.title-screen-wrap {
+  padding: max(16px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
+    max(16px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+}
+
+/* Landscape mobile (e.g. 844x390, 915x412) */
+@container (max-height: 430px) {
+  .hud-scale-layer {
+    padding: max(6px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right))
+      max(6px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)) !important;
+  }
+  .hud-top-circle {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .hud-top-circle svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .hud-mini-circle {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .hud-radar-canvas {
+    width: 46px !important;
+    height: 46px !important;
+  }
+  .hud-fire-circle {
+    width: 62px !important;
+    height: 62px !important;
+  }
+  .hud-fire-circle svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .hud-med-circle {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .hud-med-circle svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .hud-reticle-svg {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .title-screen-wrap {
+    padding: max(12px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right))
+      max(10px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left)) !important;
+  }
+  .title-logo-svg {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .title-heading {
+    font-size: 1.55rem !important;
+  }
+  .title-sub {
+    font-size: 0.78rem !important;
+  }
+}
+
+/* Portrait phone full screen (e.g. 390x844) */
+@container (max-width: 520px) {
+  .hud-scale-layer {
+    padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right))
+      max(12px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left)) !important;
+  }
+  .hud-top-destroyed {
+    padding: 3px 6px !important;
+    min-width: 74px !important;
+    font-size: 9px !important;
+  }
+  .hud-credits-pill {
+    padding: 3px 6px !important;
+    font-size: 11px !important;
+  }
+  .hud-level-pill {
+    padding: 3px 7px !important;
+    font-size: 9.5px !important;
+  }
+  .hud-top-circle {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .hud-top-circle svg {
+    width: 17px !important;
+    height: 17px !important;
+  }
+  .hud-mini-circle {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .hud-radar-canvas {
+    width: 46px !important;
+    height: 46px !important;
+  }
+  .hud-fire-circle {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .hud-fire-circle svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .hud-med-circle {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .hud-med-circle svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
+}
+
+/* Very short split-screen / compact containers */
+@container (max-height: 280px) {
+  .hud-scale-layer {
+    padding: 4px 6px !important;
+  }
+  .hud-top-destroyed {
+    padding: 2px 4px !important;
+    min-width: 64px !important;
+    font-size: 8px !important;
+  }
+  .hud-credits-pill {
+    padding: 2px 5px !important;
+    font-size: 10px !important;
+  }
+  .hud-level-pill {
+    padding: 2px 6px !important;
+    font-size: 8.5px !important;
+  }
+  .hud-top-circle {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .hud-top-circle svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .hud-mini-circle {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .hud-radar-canvas {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .hud-fire-circle {
+    width: 46px !important;
+    height: 46px !important;
+  }
+  .hud-fire-circle svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .hud-med-circle {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .hud-med-circle svg {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .hud-reticle-svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .title-screen-wrap {
+    padding: 8px 12px !important;
+  }
+  .title-logo-svg {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  .title-heading {
+    font-size: 1.15rem !important;
+  }
+  .title-sub {
+    font-size: 0.65rem !important;
+  }
+  .title-cta-row button {
+    padding: 5px 10px !important;
+    font-size: 0.7rem !important;
+  }
+  .title-hint-line {
+    font-size: 0.56rem !important;
+  }
+}
+
+/* Android TV / D-Pad high-contrast focus ring */
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
